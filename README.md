@@ -1,4 +1,4 @@
-# Payroll System
+# Payroll Management System
 
 A web-based Payroll System built with PHP for managing and displaying employee payroll, earnings, government and private deductions, and overtime payments.
 
