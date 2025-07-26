@@ -51,6 +51,6 @@ A web-based Payroll System built with PHP for managing and displaying employee p
 
 - **Security:** Ensure to secure database credentials for production use.
 - **Customization:** Adjust database fields and queries as per your organization's payroll structure.
-- **No warranty or license:** This project does not specify a license; use at your own risk.
+
 
 ---
