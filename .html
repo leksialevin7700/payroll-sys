@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tax Calculator</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background-color: #F3E5AB;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  background-color: #fff;
+  margin: 200px auto;
+  width: 450px;
+  height: auto; /* Changed height to auto */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center align the form elements */
+}
+
+label {
+  margin-bottom: 10px; /* Adjusted margin for spacing */
+  font-size: 18px; /* Reduced font size */
+  font-weight: bold;
+  text-align: center;
+}
+
+input[type="number"] {
+  padding: 10px;
+  margin-bottom: 10px; /* Adjusted margin for spacing */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 200px; /* Increased input width */
+  font-size: 16px;
+  text-align: center; /* Center align the input text */
+}
+
+input[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  margin: 0 auto;
+  padding: 10px;
+  width: 100px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  text-align: center; /* Center align the button text */
+}
+
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+.result {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Tax Calculator</h2>
+  <form id="taxCalculatorForm" onsubmit="calculateTax(event)">
+    <label for="income">Income:</label>
+    <input type="number" id="income" name="income" required><br>
+    <input type="submit" value="Calculate">
+    <div class="result" id="taxResult"></div>
+  </form>
+</div>
+
+<script>
+function calculateTax(event) {
+  event.preventDefault();
+  
+  var income = parseFloat(document.getElementById("income").value);
+  var taxAmount = 0;
+  
+  if (income <= 300000) {
+    taxAmount = 0;
+  } else if (income > 300000 && income <= 600000) {
+    taxAmount = (income - 300000) * 0.05;
+  } else if (income > 600000 && income <= 900000) {
+    taxAmount = (300000 * 0.05) + ((income - 600000) * 0.1);
+  } else if (income > 900000 && income <= 1200000) {
+    taxAmount = (300000 * 0.05) + (300000 * 0.1) + ((income - 900000) * 0.15);
+  } else if (income > 1200000 && income <= 1500000) {
+    taxAmount = (300000 * 0.05) + (300000 * 0.1) + (300000 * 0.15) + ((income - 1200000) * 0.2);
+  } else {
+    taxAmount = (300000 * 0.05) + (300000 * 0.1) + (300000 * 0.15) + (300000 * 0.2) + ((income - 1500000) * 0.3);
+  }
+  
+  var netIncome = income - taxAmount;
+  
+  document.getElementById("taxResult").innerHTML = "Tax Amount: Rs " + taxAmount.toFixed(2) + "<br>Net Income: Rs " + netIncome.toFixed(2);
+}
+</script>
+
+</body>
+</html>
