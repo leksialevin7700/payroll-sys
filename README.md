@@ -47,16 +47,6 @@ A web-based Payroll System built with PHP for managing and displaying employee p
     - **Private-Detection:** View private deductions.
     - **PIS:** Access personal information summary.
 
-## File Structure
-
-- `persnl.php` – Personal info page
-- `earning (1).php` – Earnings breakdown
-- `gov (1).php` – Government deductions
-- `pvt.php` – Private deductions
-- `ot (2).php` – Overtime earnings
-- `configg (1).php` – Database connection (PDO)
-- Other files for specific earnings/deductions types
-
 ## Notes
 
 - **Security:** Ensure to secure database credentials for production use.
