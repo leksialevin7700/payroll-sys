@@ -15,7 +15,7 @@ A web-based Payroll System built with PHP for managing and displaying employee p
 ## Technologies Used
 
 - **Backend:** PHP (with MySQLi/PDO)
-- **Frontend:** HTML, CSS
+- **Frontend:** HTML, CSS,javascript
 - **Database:** MySQL
 
 ## Setup Instructions
